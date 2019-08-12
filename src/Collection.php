@@ -27,11 +27,17 @@ class Collection
     private $logger;
 
     /**
+     * The type for logger
+     */
+    const TYPE = "COLLECTION";
+
+    /**
      * Collection constructor.
      */
     public function __construct()
     {
         $this->logger = Logger::getInstance();
+        $this->logger->setType(self::TYPE);
     }
 
     /**
