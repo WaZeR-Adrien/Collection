@@ -30,8 +30,6 @@
         }
     },
     "scripts": {
-        "generate": "Kernel\\Orm\\Generator::run",
-        "generate-models": "Kernel\\Orm\\Generator::generateEntities",
         "test": "./vendor/bin/phpunit"
     }
 }
