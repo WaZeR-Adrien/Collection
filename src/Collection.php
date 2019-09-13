@@ -320,6 +320,7 @@ class Collection
     }
 
     /**
+     * Map the collection items
      * @param callable $callback
      * @return Collection
      */
@@ -330,6 +331,18 @@ class Collection
         $items = array_map($callback, $this->items, $keys);
 
         return self::from( array_combine($keys, $items) );
+    }
+
+    /**
+     * Filter on the collection items
+     * @param callable $callback
+     * @return Collection
+     */
+    public function filter($callback)
+    {
+        $items = array_filter($this->items, $callback);
+
+        return self::from($items);
     }
 
     /**
