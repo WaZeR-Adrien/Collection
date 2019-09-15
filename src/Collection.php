@@ -29,7 +29,7 @@ class Collection
     /**
      * The type for logger
      */
-    const TYPE = "COLLECTION";
+    private const TYPE = "COLLECTION";
 
     /**
      * Collection constructor.
