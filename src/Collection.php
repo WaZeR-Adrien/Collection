@@ -139,9 +139,9 @@ class Collection
             if ($this->keyExists($key, $this->items)) {
                 // Register log
                 $this->logger->setLevel(Logger::LOG_ERROR);
-                $this->logger->write("Key $key already in use. Code : " . CollectionException::KEY_ALREADY_USE);
+                $this->logger->write("Key $key already added. Code : " . CollectionException::KEY_ALREADY_ADDED);
 
-                throw new CollectionException("Key $key already in use.", CollectionException::KEY_ALREADY_USE);
+                throw new CollectionException("Key $key already added.", CollectionException::KEY_ALREADY_ADDED);
             } else {
                 $this->items[$key] = $value;
             }
