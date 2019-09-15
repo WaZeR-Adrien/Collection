@@ -2,6 +2,7 @@
 namespace Tests;
 
 use AdrienM\Collection\Collection;
+use AdrienM\Collection\CollectionException;
 use PHPUnit\Framework\TestCase;
 
 class CollectionTest extends TestCase
@@ -254,5 +255,19 @@ class CollectionTest extends TestCase
 
         $this->collection->purge();
         $this->testIsEmpty();
+    }
+
+    /**
+     * Test exception of methods
+     */
+    public function testException()
+    {
+        $this->collection->add("value", "key");
+
+        try {
+            $this->collection->add("value2", "key");
+        } catch (CollectionException $e) {
+            self::assertSame(500, $e->getCode());
+        }
     }
 }
