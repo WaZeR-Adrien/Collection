@@ -17,7 +17,7 @@ class Collection
      * @var array
      */
     private $alias = [
-        "count" => "length", "all" => "getAll", "first" => "getFirst", "last" => "getLast"
+        "count" => "length", "size" => "length", "all" => "getAll", "first" => "getFirst", "last" => "getLast"
     ];
 
     /**
