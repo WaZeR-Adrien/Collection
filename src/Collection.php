@@ -192,7 +192,7 @@ class Collection
      * @return Collection
      * @throws CollectionException
      */
-    public function update($key, $value)
+    public function replace($key, $value)
     {
         if ($this->keyExists($key, $this->items)) {
             $this->items[$key] = $value;
