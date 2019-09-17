@@ -192,7 +192,7 @@ class Collection
      * @return Collection
      * @throws CollectionException
      */
-    public function replace($key, $value)
+    public function replace($key, $value): Collection
     {
         if ($this->keyExists($key, $this->items)) {
             $this->items[$key] = $value;
@@ -213,7 +213,7 @@ class Collection
      * @return mixed
      * @throws CollectionException
      */
-    public function get($key)
+    public function get($key): object
     {
         if ($this->keyExists($key, $this->items)) {
             return $this->items[$key];
@@ -230,7 +230,7 @@ class Collection
      * Get all items of the collection
      * @return array
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->items;
     }
@@ -239,7 +239,7 @@ class Collection
      * Get the first item of the collection
      * @return mixed|null
      */
-    public function getFirst()
+    public function getFirst(): object
     {
         if (empty($this->items)) { return null; }
 
@@ -252,7 +252,7 @@ class Collection
      * Get the last item of the collection
      * @return mixed
      */
-    public function getLast()
+    public function getLast(): object
     {
         return !empty($this->items) ? end($this->items) : null;
     }
@@ -263,7 +263,7 @@ class Collection
      * @return Collection
      * @throws CollectionException
      */
-    public function drop($keyOrValue)
+    public function drop($keyOrValue): Collection
     {
         if ($this->keyExists($keyOrValue, $this->items)) {
             unset($this->items[$keyOrValue]);
@@ -292,7 +292,7 @@ class Collection
      * @param null|int $length
      * @return $this
      */
-    public function slice($start, $length = null)
+    public function slice($start, $length = null): Collection
     {
         $this->items = array_slice($this->items, $start, $length);
 
@@ -303,7 +303,7 @@ class Collection
      * Reset collection
      * @return Collection
      */
-    public function purge()
+    public function purge(): Collection
     {
         $this->items = [];
 
@@ -314,7 +314,7 @@ class Collection
      * Reverse the collection items
      * @return Collection
      */
-    public function reverse()
+    public function reverse(): Collection
     {
         return self::from( array_reverse($this->items, true) );
     }
@@ -324,7 +324,7 @@ class Collection
      * @param callable $callback
      * @return Collection
      */
-    public function map($callback)
+    public function map($callback): Collection
     {
         $keys = array_keys($this->items);
 
@@ -338,7 +338,7 @@ class Collection
      * @param callable $callback
      * @return Collection
      */
-    public function filter($callback)
+    public function filter($callback): Collection
     {
         $items = array_filter($this->items, $callback);
 
