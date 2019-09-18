@@ -161,7 +161,7 @@ class CollectionTest extends TestCase
 
         self::assertSame("foo", $this->collection->getFirst(), "The first value must be 'foo' before being updated");
 
-        $this->collection->update(0, "fooUpdated");
+        $this->collection->replace(0, "fooUpdated");
         self::assertSame("fooUpdated", $this->collection->getFirst(), "The first value must be 'fooUpdated' after being updated");
 
         $this->collection->purge();
