@@ -213,7 +213,7 @@ class Collection
      * @return mixed
      * @throws CollectionException
      */
-    public function get($key): object
+    public function get($key)
     {
         if ($this->keyExists($key, $this->items)) {
             return $this->items[$key];
@@ -239,7 +239,7 @@ class Collection
      * Get the first item of the collection
      * @return mixed|null
      */
-    public function getFirst(): object
+    public function getFirst()
     {
         if (empty($this->items)) { return null; }
 
@@ -252,7 +252,7 @@ class Collection
      * Get the last item of the collection
      * @return mixed
      */
-    public function getLast(): object
+    public function getLast()
     {
         return !empty($this->items) ? end($this->items) : null;
     }
