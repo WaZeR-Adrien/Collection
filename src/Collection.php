@@ -136,7 +136,7 @@ class Collection
     {
         if (null != $key) {
 
-            if ($this->keyExists($key, $this->items)) {
+            if ($this->keyExists($key)) {
                 // Register log
                 $this->logger->setLevel(Logger::LOG_ERROR);
                 $this->logger->write("Key $key already added. Code : " . CollectionException::KEY_ALREADY_ADDED);
@@ -194,7 +194,7 @@ class Collection
      */
     public function replace($key, $value): Collection
     {
-        if ($this->keyExists($key, $this->items)) {
+        if ($this->keyExists($key)) {
             $this->items[$key] = $value;
         } else {
             // Register log
@@ -215,7 +215,7 @@ class Collection
      */
     public function get($key)
     {
-        if ($this->keyExists($key, $this->items)) {
+        if ($this->keyExists($key)) {
             return $this->items[$key];
         } else {
             // Register log
@@ -265,7 +265,7 @@ class Collection
      */
     public function drop($keyOrValue): Collection
     {
-        if ($this->keyExists($keyOrValue, $this->items)) {
+        if ($this->keyExists($keyOrValue)) {
             unset($this->items[$keyOrValue]);
         } elseif (in_array($keyOrValue, $this->items)) {
 
