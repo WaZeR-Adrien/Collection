@@ -202,6 +202,9 @@ class CollectionTest extends TestCase
         $this->collection->slice(1, 2);
         self::assertSame(["bar", "foo2"], $this->collection->getAll(), "The collection must contain ['bar', 'foo2'] values");
 
+        $this->collection->slice(1);
+        self::assertSame(["foo2"], $this->collection->getAll(), "The collection must contain ['foo2'] values");
+
         $this->collection->purge();
         $this->testIsEmpty();
     }
