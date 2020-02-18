@@ -1,2 +1,5 @@
 .idea
 vendor
+logs
+composer.lock
+.scannerwork
