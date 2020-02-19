@@ -52,7 +52,7 @@ class Collection
      * @param array<mixed> $firstItems
      * @return Collection
      */
-    public static function from(array $firstItems = []): Collection
+    public static function from(array $firstItems = []): self
     {
         $collection = new self();
         $collection->items = $firstItems;
@@ -64,7 +64,7 @@ class Collection
      * Check if the collection is empty
      * @return bool
      */
-    public function isEmpty()
+    public function isEmpty(): bool
     {
         return empty($this->items);
     }
@@ -73,17 +73,17 @@ class Collection
      * Get the number of items
      * @return int
      */
-    public function length()
+    public function length(): int
     {
         return count($this->items);
     }
 
     /**
      * Get the sum of values
-     * @param string|null $key
+     * @param string|int|null $key
      * @return int
      */
-    public function sum(?string $key = null)
+    public function sum($key = null): int
     {
         $sum = 0;
 
@@ -109,7 +109,7 @@ class Collection
      * @param mixed $value
      * @return bool
      */
-    public function contains($value)
+    public function contains($value): bool
     {
         return in_array($value, $this->items);
     }
@@ -119,7 +119,7 @@ class Collection
      * @param string|int $key
      * @return bool
      */
-    public function keyExists($key)
+    public function keyExists($key): bool
     {
         return array_key_exists($key, $this->items);
     }
@@ -136,11 +136,12 @@ class Collection
     /**
      * Add a new value in the collection with or without key
      * @param mixed $value
-     * @param string|null $key
+     * @param string|int|null $key
      * @return Collection
      * @throws CollectionException
+     * @throws \AdrienM\Logger\LogException
      */
-    public function add($value, string $key = null)
+    public function add($value, $key = null): self
     {
         if (null != $key) {
 
@@ -162,12 +163,12 @@ class Collection
     }
 
     /**
-     * Push items of the collection in this collection
+     * Push items of the parameter collection in this collection
      * Keep the old values if there are the same key in collections
      * @param Collection $collection
      * @return Collection
      */
-    public function push(Collection $collection)
+    public function push(Collection $collection): self
     {
         foreach ($collection->getAll() as $k => $v) {
             if (!$this->keyExists($k)) {
@@ -179,12 +180,27 @@ class Collection
     }
 
     /**
+     * Push only values of the parameter collection in this collection
+     * Don't push keys of the parameter collection
+     * @param Collection $collection
+     * @return Collection
+     */
+    public function pushOnlyValues(Collection $collection): self
+    {
+        foreach ($collection->getAll() as $k => $v) {
+            $this->items[] = $v;
+        }
+
+        return $this;
+    }
+
+    /**
      * Merge items of the collection with this collection
      * Replace the old values by the new values if there are the same key in collections
      * @param Collection $collection
      * @return Collection
      */
-    public function merge(Collection $collection)
+    public function merge(Collection $collection): self
     {
         foreach ($collection->getAll() as $key => $value) {
             $this->items[$key] = $value;
@@ -199,8 +215,9 @@ class Collection
      * @param mixed $value
      * @return Collection
      * @throws CollectionException
+     * @throws \AdrienM\Logger\LogException
      */
-    public function replace($key, $value)
+    public function replace($key, $value): self
     {
         if ($this->keyExists($key)) {
             $this->items[$key] = $value;
@@ -250,11 +267,9 @@ class Collection
      */
     public function getFirst()
     {
-        if (empty($this->items)) { return null; }
+        $items = array_slice($this->items, 0, 1);
 
-        foreach ($this->items as $item) {
-            return $item;
-        }
+        return !empty($items) ? $items[0] : null;
     }
 
     /**
@@ -267,12 +282,29 @@ class Collection
     }
 
     /**
+     * Find the first item with callback
+     * @param callable $callback
+     * @return mixed|null
+     */
+    public function find(callable $callback)
+    {
+        foreach ($this->items as $key => $value) {
+            if ($callback($value, $key, $this->items)) {
+                return $value;
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Drop value by key or directly by value
      * @param mixed $keyOrValue
      * @return Collection
      * @throws CollectionException
+     * @throws \AdrienM\Logger\LogException
      */
-    public function drop($keyOrValue)
+    public function drop($keyOrValue): self
     {
         if ($this->keyExists($keyOrValue)) {
             unset($this->items[$keyOrValue]);
@@ -301,7 +333,7 @@ class Collection
      * @param null|int $length
      * @return Collection
      */
-    public function slice(int $start, int $length = null)
+    public function slice(int $start, int $length = null): self
     {
         $this->items = array_slice($this->items, $start, $length);
 
@@ -312,7 +344,7 @@ class Collection
      * Reset collection
      * @return Collection
      */
-    public function purge()
+    public function purge(): self
     {
         $this->items = [];
 
@@ -321,19 +353,21 @@ class Collection
 
     /**
      * Reverse the collection items
+     * Return a copy of this collection with reversed items
      * @return Collection
      */
-    public function reverse()
+    public function reverse(): self
     {
         return self::from( array_reverse($this->items, true) );
     }
 
     /**
      * Map the collection items
+     * Return a copy of this collection with results of the callback
      * @param callable $callback
      * @return Collection
      */
-    public function map($callback)
+    public function map(callable $callback): self
     {
         $keys = array_keys($this->items);
 
@@ -344,10 +378,11 @@ class Collection
 
     /**
      * Filter on the collection items
+     * Return a copy of this collection with filtered items
      * @param callable $callback
      * @return Collection
      */
-    public function filter($callback)
+    public function filter(callable $callback): self
     {
         $items = array_filter($this->items, $callback);
 
