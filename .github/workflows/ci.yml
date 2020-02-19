@@ -1,4 +1,4 @@
-name: CI
+name: 'CI'
 
 on:
   - push
@@ -12,10 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: shivammathur/setup-php@v2
-	with:
-	  php-version: '7.2'
-	  coverage: xdebug
+      - name: Set up PHP 7.2
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.2'
+          coverage: xdebug
 
       - name: Validate composer.json and composer.lock
         run: composer validate
