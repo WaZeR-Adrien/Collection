@@ -1,7 +1,7 @@
 {
     "name": "adrienm/collection",
     "description": "A PHP 7.2+ library that represents an equivalent of Java collections.",
-    "homepage": "https://github.com/WaZeR-Adrien/Collection",
+    "homepage": "https://github.com/WaZeR-Adrien/PHPCollection",
     "license": "MIT",
     "keywords": [
         "collection",
