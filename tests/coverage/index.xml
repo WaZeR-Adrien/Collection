@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<phpunit xmlns="https://schema.phpunit.de/coverage/1.0">
+  <build time="Wed Feb 19 16:34:42 GMT+0000 2020" phpunit="8.5.2" coverage="7.0.10">
+    <runtime name="PHP" version="7.2.24-0ubuntu0.18.04.2" url="https://secure.php.net/"/>
+    <driver name="xdebug" version="2.6.0"/>
+  </build>
+  <project source="/home/adrien/Projects/Librairies/PHPCollection/src">
+    <tests>
+      <test name="Tests\CollectionTest::testIsEmpty" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testDrop" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testLength" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testSum" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testSumWithSubValues" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testContainsValueAndKey" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetKeys" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetAll" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetFirst" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testNullGetFirst" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetLast" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testNullGetLast" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testFind" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testEdit" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testPush" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testPushOnlyValues" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testMerge" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetValue" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testSlice" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testReverse" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testFilter" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testMap" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testGetException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testReplaceException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testDropException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testAddException" size="unknown" result="0" status="PASSED"/>
+      <test name="Tests\CollectionTest::testUnknownMethodException" size="unknown" result="0" status="PASSED"/>
+    </tests>
+    <directory name="/">
+      <totals>
+        <lines total="421" comments="167" code="254" executable="81" executed="81" percent="100.00"/>
+        <methods count="25" tested="25" percent="100.00"/>
+        <functions count="0" tested="0" percent="0"/>
+        <classes count="1" tested="1" percent="100.00"/>
+        <traits count="0" tested="0" percent="0"/>
+      </totals>
+      <file name="Collection.php" href="Collection.php.xml">
+        <totals>
+          <lines total="412" comments="167" code="245" executable="81" executed="81" percent="100.00"/>
+          <methods count="25" tested="25" percent="100.00"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="1" tested="1" percent="100.00"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+      <file name="CollectionException.php" href="CollectionException.php.xml">
+        <totals>
+          <lines total="9" comments="0" code="9" executable="0" executed="0" percent="0"/>
+          <methods count="0" tested="0" percent="0"/>
+          <functions count="0" tested="0" percent="0"/>
+          <classes count="0" tested="0" percent="0"/>
+          <traits count="0" tested="0" percent="0"/>
+        </totals>
+      </file>
+    </directory>
+  </project>
+</phpunit>
