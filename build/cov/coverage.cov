@@ -1,791 +1,126 @@
-<?php
-$coverage = new SebastianBergmann\CodeCoverage\CodeCoverage;
-$coverage->setData(array (
-  '/home/adrien/Projects/Librairies/PHPCollection/src/Collection.php' => 
-  array (
-    46 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    47 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    48 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    57 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-      1 => 'Tests\\CollectionTest::testPushOnlyValues',
-      2 => 'Tests\\CollectionTest::testMerge',
-      3 => 'Tests\\CollectionTest::testReverse',
-      4 => 'Tests\\CollectionTest::testFilter',
-      5 => 'Tests\\CollectionTest::testMap',
-    ),
-    58 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-      1 => 'Tests\\CollectionTest::testPushOnlyValues',
-      2 => 'Tests\\CollectionTest::testMerge',
-      3 => 'Tests\\CollectionTest::testReverse',
-      4 => 'Tests\\CollectionTest::testFilter',
-      5 => 'Tests\\CollectionTest::testMap',
-    ),
-    60 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-      1 => 'Tests\\CollectionTest::testPushOnlyValues',
-      2 => 'Tests\\CollectionTest::testMerge',
-      3 => 'Tests\\CollectionTest::testReverse',
-      4 => 'Tests\\CollectionTest::testFilter',
-      5 => 'Tests\\CollectionTest::testMap',
-    ),
-    61 => NULL,
-    69 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    70 => NULL,
-    78 => 
-    array (
-      0 => 'Tests\\CollectionTest::testLength',
-    ),
-    79 => NULL,
-    88 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-      1 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    90 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-      1 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    92 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-      1 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    93 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    95 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    98 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-    ),
-    99 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-    ),
-    104 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSum',
-      1 => 'Tests\\CollectionTest::testSumWithSubValues',
-    ),
-    105 => NULL,
-    114 => 
-    array (
-      0 => 'Tests\\CollectionTest::testContainsValueAndKey',
-    ),
-    115 => NULL,
-    124 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      3 => 'Tests\\CollectionTest::testGetKeys',
-      4 => 'Tests\\CollectionTest::testEdit',
-      5 => 'Tests\\CollectionTest::testPush',
-      6 => 'Tests\\CollectionTest::testMerge',
-      7 => 'Tests\\CollectionTest::testGetValue',
-      8 => 'Tests\\CollectionTest::testReverse',
-      9 => 'Tests\\CollectionTest::testMap',
-      10 => 'Tests\\CollectionTest::testGetException',
-      11 => 'Tests\\CollectionTest::testReplaceException',
-      12 => 'Tests\\CollectionTest::testDropException',
-      13 => 'Tests\\CollectionTest::testAddException',
-    ),
-    125 => NULL,
-    133 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetKeys',
-    ),
-    134 => NULL,
-    146 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testSum',
-      3 => 'Tests\\CollectionTest::testSumWithSubValues',
-      4 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      5 => 'Tests\\CollectionTest::testGetKeys',
-      6 => 'Tests\\CollectionTest::testGetAll',
-      7 => 'Tests\\CollectionTest::testGetFirst',
-      8 => 'Tests\\CollectionTest::testGetLast',
-      9 => 'Tests\\CollectionTest::testFind',
-      10 => 'Tests\\CollectionTest::testEdit',
-      11 => 'Tests\\CollectionTest::testPush',
-      12 => 'Tests\\CollectionTest::testPushOnlyValues',
-      13 => 'Tests\\CollectionTest::testMerge',
-      14 => 'Tests\\CollectionTest::testGetValue',
-      15 => 'Tests\\CollectionTest::testSlice',
-      16 => 'Tests\\CollectionTest::testReverse',
-      17 => 'Tests\\CollectionTest::testFilter',
-      18 => 'Tests\\CollectionTest::testMap',
-      19 => 'Tests\\CollectionTest::testAddException',
-    ),
-    148 => 
-    array (
-      0 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      1 => 'Tests\\CollectionTest::testGetKeys',
-      2 => 'Tests\\CollectionTest::testPush',
-      3 => 'Tests\\CollectionTest::testMerge',
-      4 => 'Tests\\CollectionTest::testGetValue',
-      5 => 'Tests\\CollectionTest::testReverse',
-      6 => 'Tests\\CollectionTest::testMap',
-      7 => 'Tests\\CollectionTest::testAddException',
-    ),
-    150 => 
-    array (
-      0 => 'Tests\\CollectionTest::testAddException',
-    ),
-    151 => 
-    array (
-      0 => 'Tests\\CollectionTest::testAddException',
-    ),
-    153 => 
-    array (
-      0 => 'Tests\\CollectionTest::testAddException',
-    ),
-    155 => 
-    array (
-      0 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      1 => 'Tests\\CollectionTest::testGetKeys',
-      2 => 'Tests\\CollectionTest::testPush',
-      3 => 'Tests\\CollectionTest::testMerge',
-      4 => 'Tests\\CollectionTest::testGetValue',
-      5 => 'Tests\\CollectionTest::testReverse',
-      6 => 'Tests\\CollectionTest::testMap',
-      7 => 'Tests\\CollectionTest::testAddException',
-    ),
-    159 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testSum',
-      3 => 'Tests\\CollectionTest::testSumWithSubValues',
-      4 => 'Tests\\CollectionTest::testGetAll',
-      5 => 'Tests\\CollectionTest::testGetFirst',
-      6 => 'Tests\\CollectionTest::testGetLast',
-      7 => 'Tests\\CollectionTest::testFind',
-      8 => 'Tests\\CollectionTest::testEdit',
-      9 => 'Tests\\CollectionTest::testPushOnlyValues',
-      10 => 'Tests\\CollectionTest::testGetValue',
-      11 => 'Tests\\CollectionTest::testSlice',
-      12 => 'Tests\\CollectionTest::testFilter',
-    ),
-    162 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testSum',
-      3 => 'Tests\\CollectionTest::testSumWithSubValues',
-      4 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      5 => 'Tests\\CollectionTest::testGetKeys',
-      6 => 'Tests\\CollectionTest::testGetAll',
-      7 => 'Tests\\CollectionTest::testGetFirst',
-      8 => 'Tests\\CollectionTest::testGetLast',
-      9 => 'Tests\\CollectionTest::testFind',
-      10 => 'Tests\\CollectionTest::testEdit',
-      11 => 'Tests\\CollectionTest::testPush',
-      12 => 'Tests\\CollectionTest::testPushOnlyValues',
-      13 => 'Tests\\CollectionTest::testMerge',
-      14 => 'Tests\\CollectionTest::testGetValue',
-      15 => 'Tests\\CollectionTest::testSlice',
-      16 => 'Tests\\CollectionTest::testReverse',
-      17 => 'Tests\\CollectionTest::testFilter',
-      18 => 'Tests\\CollectionTest::testMap',
-      19 => 'Tests\\CollectionTest::testAddException',
-    ),
-    163 => NULL,
-    173 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-    ),
-    174 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-    ),
-    175 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-    ),
-    179 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPush',
-    ),
-    180 => NULL,
-    190 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPushOnlyValues',
-    ),
-    191 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPushOnlyValues',
-    ),
-    194 => 
-    array (
-      0 => 'Tests\\CollectionTest::testPushOnlyValues',
-    ),
-    195 => NULL,
-    205 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMerge',
-    ),
-    206 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMerge',
-    ),
-    209 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMerge',
-    ),
-    210 => NULL,
-    222 => 
-    array (
-      0 => 'Tests\\CollectionTest::testEdit',
-      1 => 'Tests\\CollectionTest::testReplaceException',
-    ),
-    223 => 
-    array (
-      0 => 'Tests\\CollectionTest::testEdit',
-    ),
-    226 => 
-    array (
-      0 => 'Tests\\CollectionTest::testReplaceException',
-    ),
-    227 => 
-    array (
-      0 => 'Tests\\CollectionTest::testReplaceException',
-    ),
-    229 => 
-    array (
-      0 => 'Tests\\CollectionTest::testReplaceException',
-    ),
-    232 => 
-    array (
-      0 => 'Tests\\CollectionTest::testEdit',
-    ),
-    233 => NULL,
-    244 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetValue',
-      1 => 'Tests\\CollectionTest::testGetException',
-    ),
-    245 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetValue',
-    ),
-    248 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetException',
-    ),
-    249 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetException',
-    ),
-    251 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetException',
-    ),
-    253 => NULL,
-    261 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testGetAll',
-      2 => 'Tests\\CollectionTest::testFind',
-      3 => 'Tests\\CollectionTest::testPush',
-      4 => 'Tests\\CollectionTest::testPushOnlyValues',
-      5 => 'Tests\\CollectionTest::testMerge',
-      6 => 'Tests\\CollectionTest::testSlice',
-      7 => 'Tests\\CollectionTest::testReverse',
-      8 => 'Tests\\CollectionTest::testFilter',
-      9 => 'Tests\\CollectionTest::testMap',
-    ),
-    262 => NULL,
-    270 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetFirst',
-      1 => 'Tests\\CollectionTest::testNullGetFirst',
-      2 => 'Tests\\CollectionTest::testEdit',
-    ),
-    272 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetFirst',
-      1 => 'Tests\\CollectionTest::testNullGetFirst',
-      2 => 'Tests\\CollectionTest::testEdit',
-    ),
-    273 => NULL,
-    281 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetLast',
-      1 => 'Tests\\CollectionTest::testNullGetLast',
-    ),
-    282 => NULL,
-    291 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFind',
-    ),
-    292 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFind',
-    ),
-    293 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFind',
-    ),
-    297 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFind',
-    ),
-    298 => NULL,
-    309 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testDropException',
-    ),
-    310 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-    ),
-    311 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-      2 => 'Tests\\CollectionTest::testDropException',
-    ),
-    313 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-    ),
-    314 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-    ),
-    315 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-    ),
-    321 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDropException',
-    ),
-    322 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDropException',
-    ),
-    324 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDropException',
-    ),
-    327 => 
-    array (
-      0 => 'Tests\\CollectionTest::testDrop',
-      1 => 'Tests\\CollectionTest::testLength',
-    ),
-    328 => NULL,
-    338 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSlice',
-    ),
-    340 => 
-    array (
-      0 => 'Tests\\CollectionTest::testSlice',
-    ),
-    341 => NULL,
-    349 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    351 => 
-    array (
-      0 => 'Tests\\CollectionTest::testIsEmpty',
-      1 => 'Tests\\CollectionTest::testDrop',
-      2 => 'Tests\\CollectionTest::testLength',
-      3 => 'Tests\\CollectionTest::testSum',
-      4 => 'Tests\\CollectionTest::testSumWithSubValues',
-      5 => 'Tests\\CollectionTest::testContainsValueAndKey',
-      6 => 'Tests\\CollectionTest::testGetKeys',
-      7 => 'Tests\\CollectionTest::testGetAll',
-      8 => 'Tests\\CollectionTest::testGetFirst',
-      9 => 'Tests\\CollectionTest::testNullGetFirst',
-      10 => 'Tests\\CollectionTest::testGetLast',
-      11 => 'Tests\\CollectionTest::testNullGetLast',
-      12 => 'Tests\\CollectionTest::testFind',
-      13 => 'Tests\\CollectionTest::testEdit',
-      14 => 'Tests\\CollectionTest::testPush',
-      15 => 'Tests\\CollectionTest::testPushOnlyValues',
-      16 => 'Tests\\CollectionTest::testMerge',
-      17 => 'Tests\\CollectionTest::testGetValue',
-      18 => 'Tests\\CollectionTest::testSlice',
-      19 => 'Tests\\CollectionTest::testReverse',
-      20 => 'Tests\\CollectionTest::testFilter',
-      21 => 'Tests\\CollectionTest::testMap',
-      22 => 'Tests\\CollectionTest::testGetException',
-      23 => 'Tests\\CollectionTest::testReplaceException',
-      24 => 'Tests\\CollectionTest::testDropException',
-      25 => 'Tests\\CollectionTest::testAddException',
-      26 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    352 => NULL,
-    361 => 
-    array (
-      0 => 'Tests\\CollectionTest::testReverse',
-    ),
-    362 => NULL,
-    372 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMap',
-    ),
-    374 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMap',
-    ),
-    376 => 
-    array (
-      0 => 'Tests\\CollectionTest::testMap',
-    ),
-    377 => NULL,
-    387 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFilter',
-    ),
-    389 => 
-    array (
-      0 => 'Tests\\CollectionTest::testFilter',
-    ),
-    390 => NULL,
-    402 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetFirst',
-      1 => 'Tests\\CollectionTest::testNullGetFirst',
-      2 => 'Tests\\CollectionTest::testGetLast',
-      3 => 'Tests\\CollectionTest::testNullGetLast',
-      4 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    403 => 
-    array (
-      0 => 'Tests\\CollectionTest::testGetFirst',
-      1 => 'Tests\\CollectionTest::testNullGetFirst',
-      2 => 'Tests\\CollectionTest::testGetLast',
-      3 => 'Tests\\CollectionTest::testNullGetLast',
-    ),
-    407 => 
-    array (
-      0 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    408 => 
-    array (
-      0 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    410 => 
-    array (
-      0 => 'Tests\\CollectionTest::testUnknownMethodException',
-    ),
-    411 => NULL,
-  ),
-  '/home/adrien/Projects/Librairies/PHPCollection/src/CollectionException.php' => 
-  array (
-  ),
-));
-$coverage->setTests(array (
-  'UNCOVERED_FILES_FROM_WHITELIST' => 
-  array (
-    'size' => 'unknown',
-    'status' => -1,
-  ),
-  'Tests\\CollectionTest::testIsEmpty' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testDrop' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testLength' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testSum' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testSumWithSubValues' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testContainsValueAndKey' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetKeys' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetAll' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetFirst' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testNullGetFirst' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetLast' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testNullGetLast' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testFind' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testEdit' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testPush' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testPushOnlyValues' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testMerge' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetValue' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testSlice' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testReverse' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testFilter' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testMap' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testGetException' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testReplaceException' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testDropException' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testAddException' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-  'Tests\\CollectionTest::testUnknownMethodException' => 
-  array (
-    'size' => 'unknown',
-    'status' => 0,
-  ),
-));
-
-$filter = $coverage->filter();
-$filter->setWhitelistedFiles(array (
-  '/home/adrien/Projects/Librairies/PHPCollection/src/Collection.php' => true,
-  '/home/adrien/Projects/Librairies/PHPCollection/src/CollectionException.php' => true,
-));
-
-return $coverage;
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1582138127">
+  <project timestamp="1582138127">
+    <package name="AdrienM\Collection">
+      <file name="/home/adrien/Projects/Librairies/PHPCollection/src/Collection.php">
+        <class name="AdrienM\Collection\Collection" namespace="AdrienM\Collection">
+          <metrics complexity="49" methods="25" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="81" elements="106" coveredelements="106"/>
+        </class>
+        <line num="44" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="27"/>
+        <line num="46" type="stmt" count="27"/>
+        <line num="47" type="stmt" count="27"/>
+        <line num="48" type="stmt" count="27"/>
+        <line num="55" type="method" name="from" visibility="public" complexity="1" crap="1" count="6"/>
+        <line num="57" type="stmt" count="6"/>
+        <line num="58" type="stmt" count="6"/>
+        <line num="60" type="stmt" count="6"/>
+        <line num="67" type="method" name="isEmpty" visibility="public" complexity="1" crap="1" count="27"/>
+        <line num="69" type="stmt" count="27"/>
+        <line num="76" type="method" name="length" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="78" type="stmt" count="1"/>
+        <line num="86" type="method" name="sum" visibility="public" complexity="8" crap="8" count="2"/>
+        <line num="88" type="stmt" count="2"/>
+        <line num="90" type="stmt" count="2"/>
+        <line num="92" type="stmt" count="2"/>
+        <line num="93" type="stmt" count="1"/>
+        <line num="95" type="stmt" count="1"/>
+        <line num="98" type="stmt" count="1"/>
+        <line num="99" type="stmt" count="1"/>
+        <line num="104" type="stmt" count="2"/>
+        <line num="112" type="method" name="contains" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="114" type="stmt" count="1"/>
+        <line num="122" type="method" name="keyExists" visibility="public" complexity="1" crap="1" count="14"/>
+        <line num="124" type="stmt" count="14"/>
+        <line num="131" type="method" name="keys" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="133" type="stmt" count="1"/>
+        <line num="144" type="method" name="add" visibility="public" complexity="3" crap="3" count="20"/>
+        <line num="146" type="stmt" count="20"/>
+        <line num="148" type="stmt" count="8"/>
+        <line num="150" type="stmt" count="1"/>
+        <line num="151" type="stmt" count="1"/>
+        <line num="153" type="stmt" count="1"/>
+        <line num="155" type="stmt" count="8"/>
+        <line num="159" type="stmt" count="13"/>
+        <line num="162" type="stmt" count="20"/>
+        <line num="171" type="method" name="push" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="173" type="stmt" count="1"/>
+        <line num="174" type="stmt" count="1"/>
+        <line num="175" type="stmt" count="1"/>
+        <line num="179" type="stmt" count="1"/>
+        <line num="188" type="method" name="pushOnlyValues" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="190" type="stmt" count="1"/>
+        <line num="191" type="stmt" count="1"/>
+        <line num="194" type="stmt" count="1"/>
+        <line num="203" type="method" name="merge" visibility="public" complexity="2" crap="2" count="1"/>
+        <line num="205" type="stmt" count="1"/>
+        <line num="206" type="stmt" count="1"/>
+        <line num="209" type="stmt" count="1"/>
+        <line num="220" type="method" name="replace" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="222" type="stmt" count="2"/>
+        <line num="223" type="stmt" count="1"/>
+        <line num="226" type="stmt" count="1"/>
+        <line num="227" type="stmt" count="1"/>
+        <line num="229" type="stmt" count="1"/>
+        <line num="232" type="stmt" count="1"/>
+        <line num="242" type="method" name="get" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="244" type="stmt" count="2"/>
+        <line num="245" type="stmt" count="1"/>
+        <line num="248" type="stmt" count="1"/>
+        <line num="249" type="stmt" count="1"/>
+        <line num="251" type="stmt" count="1"/>
+        <line num="259" type="method" name="getAll" visibility="public" complexity="1" crap="1" count="10"/>
+        <line num="261" type="stmt" count="10"/>
+        <line num="268" type="method" name="getFirst" visibility="public" complexity="2" crap="2" count="3"/>
+        <line num="270" type="stmt" count="3"/>
+        <line num="272" type="stmt" count="3"/>
+        <line num="279" type="method" name="getLast" visibility="public" complexity="2" crap="2" count="2"/>
+        <line num="281" type="stmt" count="2"/>
+        <line num="289" type="method" name="find" visibility="public" complexity="3" crap="3" count="1"/>
+        <line num="291" type="stmt" count="1"/>
+        <line num="292" type="stmt" count="1"/>
+        <line num="293" type="stmt" count="1"/>
+        <line num="297" type="stmt" count="1"/>
+        <line num="307" type="method" name="drop" visibility="public" complexity="5" crap="5" count="3"/>
+        <line num="309" type="stmt" count="3"/>
+        <line num="310" type="stmt" count="1"/>
+        <line num="311" type="stmt" count="3"/>
+        <line num="313" type="stmt" count="2"/>
+        <line num="314" type="stmt" count="2"/>
+        <line num="315" type="stmt" count="2"/>
+        <line num="321" type="stmt" count="1"/>
+        <line num="322" type="stmt" count="1"/>
+        <line num="324" type="stmt" count="1"/>
+        <line num="327" type="stmt" count="2"/>
+        <line num="336" type="method" name="slice" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="338" type="stmt" count="1"/>
+        <line num="340" type="stmt" count="1"/>
+        <line num="347" type="method" name="purge" visibility="public" complexity="1" crap="1" count="27"/>
+        <line num="349" type="stmt" count="27"/>
+        <line num="351" type="stmt" count="27"/>
+        <line num="359" type="method" name="reverse" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="361" type="stmt" count="1"/>
+        <line num="370" type="method" name="map" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="372" type="stmt" count="1"/>
+        <line num="374" type="stmt" count="1"/>
+        <line num="376" type="stmt" count="1"/>
+        <line num="385" type="method" name="filter" visibility="public" complexity="1" crap="1" count="1"/>
+        <line num="387" type="stmt" count="1"/>
+        <line num="389" type="stmt" count="1"/>
+        <line num="400" type="method" name="__call" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="402" type="stmt" count="5"/>
+        <line num="403" type="stmt" count="4"/>
+        <line num="407" type="stmt" count="1"/>
+        <line num="408" type="stmt" count="1"/>
+        <line num="410" type="stmt" count="1"/>
+        <metrics loc="412" ncloc="245" classes="1" methods="25" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="81" elements="106" coveredelements="106"/>
+      </file>
+      <file name="/home/adrien/Projects/Librairies/PHPCollection/src/CollectionException.php">
+        <class name="AdrienM\Collection\CollectionException" namespace="AdrienM\Collection">
+          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+        </class>
+        <metrics loc="9" ncloc="9" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="2" loc="421" ncloc="254" classes="1" methods="25" coveredmethods="25" conditionals="0" coveredconditionals="0" statements="81" coveredstatements="81" elements="106" coveredelements="106"/>
+  </project>
+</coverage>

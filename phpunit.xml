@@ -12,7 +12,6 @@
     </filter>
     <logging>
         <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
-        <log type="coverage-clover" target="build/log/clover.xml" showUncoveredFiles="true"/>
-        <log type="coverage-php" target="build/cov/coverage.cov" showUncoveredFiles="true"/>
+        <log type="coverage-clover" target="build/cov/coverage.cov" showUncoveredFiles="true"/>
     </logging>
 </phpunit>
