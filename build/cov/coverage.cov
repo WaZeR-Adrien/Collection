@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1582138127">
-  <project timestamp="1582138127">
+<coverage generated="1582138988">
+  <project timestamp="1582138988">
     <package name="AdrienM\Collection">
       <file name="/home/adrien/Projects/Librairies/PHPCollection/src/Collection.php">
         <class name="AdrienM\Collection\Collection" namespace="AdrienM\Collection">
