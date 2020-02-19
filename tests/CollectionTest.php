@@ -263,7 +263,7 @@ class CollectionTest extends TestCase
     /**
      * Test exception of methods
      */
-    public function testException()
+    public function testException(): void
     {
         $this->collection->add("value", "key");
 

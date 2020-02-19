@@ -4,17 +4,24 @@ namespace AdrienM\Collection;
 
 use AdrienM\Logger\Logger;
 
+/**
+ * @method int count()
+ * @method int size()
+ * @method array all()
+ * @method mixed|null first()
+ * @method mixed|null last()
+ */
 class Collection
 {
     /**
      * Items of the collection
-     * @var array
+     * @var array<mixed>
      */
     private $items = [];
 
     /**
      * All alias to call the good method
-     * @var array
+     * @var array<string>
      */
     private $alias = [
         "count" => "length", "size" => "length", "all" => "getAll", "first" => "getFirst", "last" => "getLast"
@@ -42,9 +49,10 @@ class Collection
 
     /**
      * Get instance from array
-     * @param array $firstitems
+     * @param array<mixed> $firstItems
+     * @return Collection
      */
-    public static function from(array $firstItems = [])
+    public static function from(array $firstItems = []): Collection
     {
         $collection = new self();
         $collection->items = $firstItems;
@@ -72,10 +80,10 @@ class Collection
 
     /**
      * Get the sum of values
-     * @param null $key
+     * @param string|null $key
      * @return int
      */
-    public function sum(string $key = null)
+    public function sum(?string $key = null)
     {
         $sum = 0;
 
@@ -98,7 +106,7 @@ class Collection
 
     /**
      * Check if the collection contains the value
-     * @param $value
+     * @param mixed $value
      * @return bool
      */
     public function contains($value)
@@ -108,7 +116,7 @@ class Collection
 
     /**
      * Check if the key exists in the collection
-     * @param $key
+     * @param string|int $key
      * @return bool
      */
     public function keyExists($key)
@@ -118,9 +126,9 @@ class Collection
 
     /**
      * Get all keys
-     * @return array
+     * @return array<string|int>
      */
-    public function keys()
+    public function keys(): array
     {
         return array_keys($this->items);
     }
@@ -212,6 +220,7 @@ class Collection
      * @param string|int $key
      * @return mixed
      * @throws CollectionException
+     * @throws \AdrienM\Logger\LogException
      */
     public function get($key)
     {
@@ -228,9 +237,9 @@ class Collection
 
     /**
      * Get all items of the collection
-     * @return array
+     * @return array<mixed>
      */
-    public function getAll()
+    public function getAll(): array
     {
         return $this->items;
     }
@@ -250,7 +259,7 @@ class Collection
 
     /**
      * Get the last item of the collection
-     * @return mixed
+     * @return mixed|null
      */
     public function getLast()
     {
@@ -347,12 +356,13 @@ class Collection
 
     /**
      * Call a method with the alias
-     * @param $name
-     * @param $args
+     * @param string $name
+     * @param array<mixed> $args
      * @return mixed
      * @throws CollectionException
+     * @throws \AdrienM\Logger\LogException
      */
-    public function __call($name, $args)
+    public function __call(string $name, array $args)
     {
         if (array_key_exists($name, $this->alias)) {
             return call_user_func_array([$this, $this->alias[$name]], $args);
