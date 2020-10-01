@@ -2,6 +2,7 @@
 
 namespace AdrienM\Collection;
 
+use AdrienM\Logger\LogException;
 use AdrienM\Logger\Logger;
 
 /**
@@ -115,6 +116,18 @@ class Collection
     }
 
     /**
+     * Check if the collection contains the value
+     * @param string $reg
+     * @return bool
+     */
+    public function containsWithRegex($reg): bool
+    {
+        return $this->find(function ($item) use ($reg) {
+            return is_string($item) && preg_match($reg, $item);
+        }) ? true : false;
+    }
+
+    /**
      * Check if the key exists in the collection
      * @param string|int $key
      * @return bool
@@ -126,7 +139,7 @@ class Collection
 
     /**
      * Get all keys
-     * @return array<string|int>
+     * @return string[]|int[]
      */
     public function keys(): array
     {
@@ -139,7 +152,7 @@ class Collection
      * @param string|int|null $key
      * @return Collection
      * @throws CollectionException
-     * @throws \AdrienM\Logger\LogException
+     * @throws LogException
      */
     public function add($value, $key = null): self
     {
@@ -187,9 +200,7 @@ class Collection
      */
     public function pushOnlyValues(Collection $collection): self
     {
-        foreach ($collection->getAll() as $k => $v) {
-            $this->items[] = $v;
-        }
+        array_push($this->items, ...$collection->getAll());
 
         return $this;
     }
@@ -215,7 +226,7 @@ class Collection
      * @param mixed $value
      * @return Collection
      * @throws CollectionException
-     * @throws \AdrienM\Logger\LogException
+     * @throws LogException
      */
     public function replace($key, $value): self
     {
@@ -237,7 +248,7 @@ class Collection
      * @param string|int $key
      * @return mixed
      * @throws CollectionException
-     * @throws \AdrienM\Logger\LogException
+     * @throws LogException
      */
     public function get($key)
     {
@@ -302,7 +313,7 @@ class Collection
      * @param mixed $keyOrValue
      * @return Collection
      * @throws CollectionException
-     * @throws \AdrienM\Logger\LogException
+     * @throws LogException
      */
     public function drop($keyOrValue): self
     {
@@ -395,7 +406,7 @@ class Collection
      * @param array<mixed> $args
      * @return mixed
      * @throws CollectionException
-     * @throws \AdrienM\Logger\LogException
+     * @throws LogException
      */
     public function __call(string $name, array $args)
     {

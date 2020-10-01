@@ -1,6 +1,0 @@
-{
-    "hooks": {
-        "pre-commit": "vendor/bin/phpstan analyse src --level 6",
-        "pre-push": "composer test"
-    }
-}

@@ -114,6 +114,18 @@ class CollectionTest extends TestCase
     }
 
     /**
+     * Test if the collection contain "foo" by regex
+     */
+    public function testContainsWithRegex(): void
+    {
+        $this->collection
+            ->add("foo")
+            ->add("bar");
+
+        self::assertTrue($this->collection->containsWithRegex("/foo/"), "The collection must contain the value 'foo'");
+    }
+
+    /**
      * Test get all keys
      */
     public function testGetKeys(): void
