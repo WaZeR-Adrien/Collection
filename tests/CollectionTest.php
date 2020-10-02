@@ -126,6 +126,18 @@ class CollectionTest extends TestCase
     }
 
     /**
+     * Test if the collection contain "foo" string
+     */
+    public function testContainsString(): void
+    {
+        $this->collection
+            ->add("foo")
+            ->add("bar");
+
+        self::assertTrue($this->collection->containsString("foo"), "The collection must contain the value 'foo'");
+    }
+
+    /**
      * Test get all keys
      */
     public function testGetKeys(): void

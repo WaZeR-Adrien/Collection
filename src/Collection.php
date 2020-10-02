@@ -4,6 +4,7 @@ namespace AdrienM\Collection;
 
 use AdrienM\Logger\LogException;
 use AdrienM\Logger\Logger;
+use function _HumbugBoxf43f7c5c5350\str_contains;
 
 /**
  * @method int count()
@@ -120,10 +121,22 @@ class Collection
      * @param string $reg
      * @return bool
      */
-    public function containsWithRegex($reg): bool
+    public function containsWithRegex(string $reg): bool
     {
         return $this->find(function ($item) use ($reg) {
             return is_string($item) && preg_match($reg, $item);
+        }) ? true : false;
+    }
+
+    /**
+     * Check if the collection contains the value
+     * @param string $string
+     * @return bool
+     */
+    public function containsString(string $string): bool
+    {
+        return $this->find(function ($item) use ($string) {
+            return is_string($item) && is_numeric(strpos($item, $string));
         }) ? true : false;
     }
 
