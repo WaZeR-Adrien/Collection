@@ -400,6 +400,22 @@ class CollectionTest extends TestCase
     }
 
     /**
+     * Test join on items
+     */
+    public function testJoin(): void
+    {
+        $this->collection
+            ->add("foo")
+            ->add("bar");
+
+        self::assertSame(["foo", "bar"], $this->collection->getAll(), "The collection must contain ['foo', 'bar'] values");
+
+        $string = $this->collection->join(', ');
+
+        self::assertSame("foo, bar", $string, "The collection must contain foo, bar values");
+    }
+
+    /**
      * Test to get a specific value
      */
     public function testGetException(): void

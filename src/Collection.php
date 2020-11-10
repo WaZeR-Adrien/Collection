@@ -414,6 +414,16 @@ class Collection
     }
 
     /**
+     * Join array of string by glue
+     * @param string $glue
+     * @return string
+     */
+    public function join(string $glue): string
+    {
+        return implode($glue, $this->items);
+    }
+
+    /**
      * Call a method with the alias
      * @param string $name
      * @param array<mixed> $args
