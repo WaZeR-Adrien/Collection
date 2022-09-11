@@ -50,11 +50,24 @@ class Collection
     }
 
     /**
+     * Get instance from initial collection
+     * @param Collection $initialCol
+     * @return Collection
+     */
+    public static function from(Collection $initialCol): self
+    {
+        $collection = new self();
+        $collection->items = $initialCol->getAll();
+
+        return $collection;
+    }
+
+    /**
      * Get instance from array
      * @param array<mixed> $firstItems
      * @return Collection
      */
-    public static function from(array $firstItems = []): self
+    public static function of(array $firstItems = []): self
     {
         $collection = new self();
         $collection->items = $firstItems;
@@ -234,6 +247,26 @@ class Collection
     }
 
     /**
+     * Flatten items of the multidimentionnal collection
+     * @return Collection
+     */
+    public function flatten(): self
+    {
+        $col = new Collection();
+        foreach ($this->getAll() as $key => $value) {
+            if ($value instanceof Collection) {
+                $col->merge($value->flatten());
+            } elseif (is_array($value)) {
+                $col->merge(Collection::of($value)->flatten());
+            } else {
+                $col->merge(Collection::of([$key => $value]));
+            }
+        }
+
+        return $col;
+    }
+
+    /**
      * Add a new value in the collection with or without key
      * @param string|int $key
      * @param mixed $value
@@ -382,7 +415,7 @@ class Collection
      */
     public function reverse(): self
     {
-        return self::from( array_reverse($this->items, true) );
+        return self::of( array_reverse($this->items, true) );
     }
 
     /**
@@ -397,7 +430,7 @@ class Collection
 
         $items = array_map($callback, $this->items, $keys);
 
-        return self::from( array_combine($keys, $items) );
+        return self::of( array_combine($keys, $items) );
     }
 
     /**
@@ -410,7 +443,7 @@ class Collection
     {
         $items = array_filter($this->items, $callback);
 
-        return self::from($items);
+        return self::of($items);
     }
 
     /**
