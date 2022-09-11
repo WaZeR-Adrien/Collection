@@ -2,10 +2,6 @@
 
 namespace AdrienM\Collection;
 
-use AdrienM\Logger\LogException;
-use AdrienM\Logger\Logger;
-use function _HumbugBoxf43f7c5c5350\str_contains;
-
 /**
  * @method int count()
  * @method int size()
@@ -28,26 +24,6 @@ class Collection
     private $alias = [
         "count" => "length", "size" => "length", "all" => "getAll", "first" => "getFirst", "last" => "getLast"
     ];
-
-    /**
-     * The logger
-     * @var Logger
-     */
-    private $logger;
-
-    /**
-     * The type for logger
-     */
-    private const TYPE = "COLLECTION";
-
-    /**
-     * Collection constructor.
-     */
-    public function __construct()
-    {
-        $this->logger = Logger::getInstance();
-        $this->logger->setType(self::TYPE);
-    }
 
     /**
      * Get instance from initial collection
@@ -178,17 +154,12 @@ class Collection
      * @param string|int|null $key
      * @return Collection
      * @throws CollectionException
-     * @throws LogException
      */
     public function add($value, $key = null): self
     {
         if (null != $key) {
 
             if ($this->keyExists($key)) {
-                // Register log
-                $this->logger->setLevel(Logger::LOG_ERROR);
-                $this->logger->write("Key $key already added. Code : " . CollectionException::KEY_ALREADY_ADDED);
-
                 throw new CollectionException("Key $key already added.", CollectionException::KEY_ALREADY_ADDED);
             } else {
                 $this->items[$key] = $value;
@@ -272,18 +243,13 @@ class Collection
      * @param mixed $value
      * @return Collection
      * @throws CollectionException
-     * @throws LogException
      */
     public function replace($key, $value): self
     {
         if ($this->keyExists($key)) {
             $this->items[$key] = $value;
         } else {
-            // Register log
-            $this->logger->setLevel(Logger::LOG_ERROR);
-            $this->logger->write("The key $key does not exist in the collection. Code : " . CollectionException::KEY_INVALID);
-
-            throw new CollectionException("The key $key does not exist in the collection.", CollectionException::KEY_INVALID);
+           throw new CollectionException("The key $key does not exist in the collection.", CollectionException::KEY_INVALID);
         }
 
         return $this;
@@ -294,17 +260,12 @@ class Collection
      * @param string|int $key
      * @return mixed
      * @throws CollectionException
-     * @throws LogException
      */
     public function get($key)
     {
         if ($this->keyExists($key)) {
             return $this->items[$key];
         } else {
-            // Register log
-            $this->logger->setLevel(Logger::LOG_ERROR);
-            $this->logger->write("The key $key does not exist in the collection. Code : " . CollectionException::KEY_INVALID);
-
             throw new CollectionException("The key $key does not exist in the collection.", CollectionException::KEY_INVALID);
         }
     }
@@ -359,7 +320,6 @@ class Collection
      * @param mixed $keyOrValue
      * @return Collection
      * @throws CollectionException
-     * @throws LogException
      */
     public function drop($keyOrValue): self
     {
@@ -374,10 +334,6 @@ class Collection
             }
 
         } else {
-            // Register log
-            $this->logger->setLevel(Logger::LOG_ERROR);
-            $this->logger->write("The key $keyOrValue does not exist in the collection. Code : " . CollectionException::KEY_INVALID);
-
             throw new CollectionException("The key $keyOrValue does not exist in the collection.", CollectionException::KEY_INVALID);
         }
 
@@ -462,17 +418,12 @@ class Collection
      * @param array<mixed> $args
      * @return mixed
      * @throws CollectionException
-     * @throws LogException
      */
     public function __call(string $name, array $args)
     {
         if (array_key_exists($name, $this->alias)) {
             return call_user_func_array([$this, $this->alias[$name]], $args);
         }
-
-        // Register log
-        $this->logger->setLevel(Logger::LOG_ERROR);
-        $this->logger->write("Method or alias $name does not exist. Code : " . CollectionException::METHOD_DOES_NOT_EXIST);
 
         throw new CollectionException("Method or alias $name does not exist.", CollectionException::METHOD_DOES_NOT_EXIST);
     }

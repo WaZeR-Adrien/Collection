@@ -1,0 +1,5 @@
+[2022-09-11T20:43:31.289899+00:00] Collection.ERROR: The key foobar does not exist in the collection. Code : 101 [] []
+[2022-09-11T20:43:31.292584+00:00] Collection.ERROR: The key foobar does not exist in the collection. Code : 101 [] []
+[2022-09-11T20:43:31.292898+00:00] Collection.ERROR: The key foobar does not exist in the collection. Code : 101 [] []
+[2022-09-11T20:43:31.293088+00:00] Collection.ERROR: Key key already added. Code : 100 [] []
+[2022-09-11T20:43:31.293271+00:00] Collection.ERROR: Method or alias unknown does not exist. Code : 102 [] []
