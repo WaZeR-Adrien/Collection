@@ -258,7 +258,7 @@ class CollectionTest extends TestCase
 
         self::assertSame(["key" => "foo", "key2" => "bar"], $this->collection->getAll(), "The collection must contain ['key' => 'foo', 'key2' => 'bar'] values");
 
-        $this->collection->push(Collection::from(["key3" => "test"]));
+        $this->collection->push(Collection::of(["key3" => "test"]));
         self::assertSame(
             ["key" => "foo", "key2" => "bar", "key3" => "test"], $this->collection->getAll(),
             "The collection must contain ['key' => 'foo', 'key2' => 'bar', 'key3' => 'test'] values");
@@ -275,7 +275,7 @@ class CollectionTest extends TestCase
 
         self::assertSame(["foo", "bar"], $this->collection->getAll(), "The collection must contain ['foo', 'bar'] values");
 
-        $this->collection->pushOnlyValues(Collection::from(["test"]));
+        $this->collection->pushOnlyValues(Collection::of(["test"]));
         self::assertSame(["foo", "bar", "test"], $this->collection->getAll(), "The collection must contain ['foo', 'bar', 'test'] values");
     }
 
@@ -291,8 +291,26 @@ class CollectionTest extends TestCase
 
         self::assertSame(["key" => "foo", "key2" => "bar"], $this->collection->getAll(), "The collection must contain ['key' => 'foo', 'key2' => 'bar'] values");
 
-        $this->collection->merge(Collection::from(["key" => "test"]));
+        $this->collection->merge(Collection::of(["key" => "test"]));
         self::assertSame(["key" => "test", "key2" => "bar"], $this->collection->getAll(), "The collection must contain ['key' => 'test', 'key2' => 'bar'] values");
+    }
+
+    /**
+     * Test to flatten collections
+     */
+    public function testFlatten(): void
+    {
+        $gotCol = Collection::of(["John" => "Snow", "Daenerys" => "Targaryen"]);
+
+        $this->collection
+            ->add("foo", "key")
+            ->add(["a", "b", "c"])
+            ->add($gotCol);
+
+
+        self::assertSame(["key" => "foo", ["a", "b", "c"], $gotCol], $this->collection->getAll(), "The collection must contain ['key' => 'foo', ['a', 'b', 'c'], Collection::of(['John' => 'Snow', 'Daenerys' => 'Targaryen'])] items");
+
+        self::assertSame(["key" => "foo", 0 => "a", 1 => "b", 2 => "c", "John" => "Snow", "Daenerys" => "Targaryen"], $this->collection->flatten()->getAll(), "The collection must contain ['key' => 'foo', 0 => 'a', 1 => 'b', 2 => 'c', 'John' => 'Snow', 'Daenerys' => 'Targaryen'] items");
     }
 
     /**
@@ -423,7 +441,7 @@ class CollectionTest extends TestCase
         try {
             $this->collection->get("foobar");
         } catch (CollectionException $e) {
-            self::assertSame(501, $e->getCode(), "There must generate an CollectionException");
+            self::assertSame(CollectionException::KEY_INVALID, $e->getCode(), "There must generate an CollectionException");
         }
     }
 
@@ -435,7 +453,7 @@ class CollectionTest extends TestCase
         try {
             $this->collection->replace("foobar", 10);
         } catch (CollectionException $e) {
-            self::assertSame(501, $e->getCode(), "There must generate an CollectionException");
+            self::assertSame(CollectionException::KEY_INVALID, $e->getCode(), "There must generate an CollectionException");
         }
     }
 
@@ -447,7 +465,7 @@ class CollectionTest extends TestCase
         try {
             $this->collection->drop("foobar");
         } catch (CollectionException $e) {
-            self::assertSame(501, $e->getCode(), "There must generate an CollectionException");
+            self::assertSame(CollectionException::KEY_INVALID, $e->getCode(), "There must generate an CollectionException");
         }
     }
 
@@ -461,7 +479,7 @@ class CollectionTest extends TestCase
         try {
             $this->collection->add("value2", "key");
         } catch (CollectionException $e) {
-            self::assertSame(500, $e->getCode(), "There must generate an CollectionException");
+            self::assertSame(CollectionException::KEY_ALREADY_ADDED, $e->getCode(), "There must generate an CollectionException");
         }
     }
 
@@ -470,7 +488,7 @@ class CollectionTest extends TestCase
         try {
             $this->collection->unknown();
         } catch (CollectionException $e) {
-            self::assertSame(502, $e->getCode(), "There must generate an CollectionException");
+            self::assertSame(CollectionException::METHOD_DOES_NOT_EXIST, $e->getCode(), "There must generate an CollectionException");
         }
     }
 
